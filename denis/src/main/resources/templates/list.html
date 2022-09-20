@@ -13,15 +13,15 @@
 		</tr> 	
 	</thead>
 	<tbody>
-		<tr th: each= "mensajes : ${mensajes}">
-		<th th: text="${mensajes.pais}"></th>
-		<th th: text="${mensajes.mensajes}"></th>
+		<tr th: each= "mensaje : ${mensajes}">
+		<th th: text="${mensaje.pais}"></th>
+		<th th: text="${mensaje.mensaje}"></th>
 	</tr>
 	
 	</tbody>
 	</table>
 	
-	<form action="#" th: action="@{/mensajes/addmensajes"} th: object ="${mensaje}" method ="post">
+	<form action="#" th: action="@{/mensajes/addmensajes}" th: object ="${mensaje}" method ="post">
 	<p><input type = "text" placeholder="pais" th: field="*{pais}"/></p>
 	<p><input type = "text" placeholder="mensaje" th: field="*{mensaje}"/></p>
 	<button id="fBoton" class="submit" >Enviar</button>
