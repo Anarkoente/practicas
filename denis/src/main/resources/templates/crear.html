@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Insert title here</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/mensajes/añadir}" th:object ="${mensajeNuevo}" method ="post">
+    <p><input type = "text" placeholder="pais" th:field="*{pais}"/></p>
+    <p><input type = "text" placeholder="mensaje" th:field="*{mensajes}"/></p>
+
+    <button type="submit">Enviar</button>
+</form>
+
+</body>
+</html>

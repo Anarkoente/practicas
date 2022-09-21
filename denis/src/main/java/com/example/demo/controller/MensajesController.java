@@ -44,18 +44,26 @@ public class MensajesController  {
 
 		ModelAndView mav = new ModelAndView("list");
 		mav.addObject("mensajes", mensajes);
-		mav.addObject("mensajeNuevo", new Mensajes());
 		return mav;
 	}
 
 	
 	// Create a new mensaje
-	
-	@PostMapping ("/addmensajes")
 
-	public String addMensajes (@ModelAttribute(name="mensajes1")Mensajes mensaje) {
+	@GetMapping ("/añadir")
+
+    	public ModelAndView formularioMensajes () {
+    		ModelAndView mav = new ModelAndView("crear");
+    		mav.addObject("mensajeNuevo", new Mensajes());
+            return mav;
+    	}
+	
+	@PostMapping ("/añadir")
+
+	public ModelAndView addMensajes (@ModelAttribute(name="mensajes1")Mensajes mensaje) {
 		mensajesservice.addmensajes(mensaje);
-		return "redirect:/mensajes/list";
+		String urlInterna = "/mensajes/list";
+        return new ModelAndView("redirect:"+urlInterna);
 	}
 	
 	public ResponseEntity<?> create (@RequestBody Mensajes mensajes){

@@ -5,27 +5,27 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<b>Lista de mensajes</b>
+	<a href="/mensajes/añadir">Añadir mensaje</a>
 	<table border="1">
 	<thead>
 		<tr>
 		 <th>pais</th>
 		 <th>mensaje</th>
+		 <th>acciones</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr th:each="item :${mensajes}">
 			<th th:text="${item.pais}"></th>
 			<th th:text="${item.mensajes}"></th>
+			<th>
+				<a href="/mensajes/${item.id}">Editar</a>
+			</th>
 		</tr>
 	</tbody>
 	</table>
-
-	<form action="#" th:action="@{/mensajes/addmensajes}" th:object ="${mensajeNuevo}" method ="post">
-		<p><input type = "text" placeholder="pais" th:field="*{pais}"/></p>
-		<p><input type = "text" placeholder="mensaje" th:field="*{mensajes}"/></p>
-
-		<button type="submit">Enviar</button>
-	</form>
 
 </body>
 </html>
