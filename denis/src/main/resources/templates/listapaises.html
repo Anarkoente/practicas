@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<b>Lista de paises</b>
+	<a href="/paises/añadirpais">Añadir pais</a>
+	<table border="1">
+	<thead>
+		<tr>
+		 <th>pais</th>
+		 <th>acciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="item :${paises}">
+			<th th:text="${item.pais}"></th>
+			<th>
+				<a th:href="@{'/paises/editarpais' + ${item.id}}">Editar pais</a>
+			</th>
+		</tr>
+	</tbody>
+	</table>
+
+</body>
+</html>
