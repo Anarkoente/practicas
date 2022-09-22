@@ -21,7 +21,7 @@
 			<th th:text="${item.pais}"></th>
 			<th th:text="${item.mensajes}"></th>
 			<th>
-				<a href="/mensajes/${item.id}">Editar</a>
+				<a th:href="@{'/mensajes/' + ${item.id}}">Editar</a>
 			</th>
 		</tr>
 	</tbody>

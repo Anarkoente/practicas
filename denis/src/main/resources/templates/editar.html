@@ -6,7 +6,8 @@
 </head>
 <body>
 
-<form action="/mensajes/añadir" th:object ="${mensajeNuevo}" method ="post">
+<b>Editar mensaje</b>
+<form action="#" th:action="@{'/mensajes/' + ${id} + '/editar'}" th:object ="${mensaje}" method ="post">
     <p><input type = "text" placeholder="pais" th:field="*{pais}"/></p>
     <p><input type = "text" placeholder="mensaje" th:field="*{mensajes}"/></p>
 
