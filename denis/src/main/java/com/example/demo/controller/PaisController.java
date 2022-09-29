@@ -31,7 +31,7 @@ import com.example.demo.service.PaisService;
 
 public class PaisController  {
 	@Autowired
-	@Qualifier("paissservice")
+	@Qualifier("paisservice")
 	private PaisService paisservice;
 	
 	@GetMapping("/paises/listapaises")
